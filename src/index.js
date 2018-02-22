@@ -6,7 +6,7 @@ import Divider from 'material-ui/Divider'
 import IconButton from 'material-ui/IconButton'
 import ChevronLeft from 'material-ui-icons/ChevronLeft'
 
-class ReactJSpainDrawer extends Component {
+class RJSDrawer extends Component {
 
   close = () => {
     const { onClose } = this.props
@@ -40,11 +40,11 @@ class ReactJSpainDrawer extends Component {
 
 }
 
-ReactJSpainDrawer.propTypes = {
+RJSDrawer.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func,
   sections: PropTypes.array,
   user: PropTypes.object
 }
 
-export default ReactJSpainDrawer
+export default RJSDrawer

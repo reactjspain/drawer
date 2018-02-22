@@ -22,11 +22,8 @@ let WebpackConfig = {
         exclude: /node_modules/,
         include : APP_DIR,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [ 'env', 'react' ],
-            plugins: ['transform-class-properties']
-          }
+          loader: 'babel-loader'
+          //config in .babelrc
         }
       },
       {

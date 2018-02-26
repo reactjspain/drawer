@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
-import Drawer from '../src'
+import ReactDOM from 'react-dom'
+import { hot } from 'react-hot-loader'
+import Drawer from '../drawer'
 
-class App extends Component {
+const AppC = () => <div>Hello World!! 10aa</div>
+const HotApp = hot(module)(AppC)
+
+/*class App extends Component {
   state = {
     open: false
   }
@@ -14,6 +19,7 @@ class App extends Component {
 
   render = () => (
     <React.Fragment>
+      {'holaaaaaaa'}
       <button onClick={this.toggle}>
         Toggle Drawer
       </button>
@@ -21,6 +27,9 @@ class App extends Component {
     </React.Fragment>
   )
 
-}
+}*/
 
-export default App
+
+ReactDOM.render(<HotApp />, document.getElementById('root'))
+
+export default HotApp

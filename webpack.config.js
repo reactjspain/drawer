@@ -1,16 +1,16 @@
 const webpack = require('webpack')
 const path = require('path')
 
-const BUILD_DIR = path.resolve(__dirname, 'lib')
+const BUILD_DIR = path.resolve(__dirname, 'dist')
 const APP_DIR = path.resolve(__dirname, 'src')
 
 let WebpackConfig = {
 
-  entry: APP_DIR + '/index.js',
+  entry: APP_DIR + '/drawer.js',
 
   output: {
     path: BUILD_DIR,
-    filename: 'index.js',
+    filename: 'drawer.min.js',
     libraryTarget: 'umd',
     library: 'Drawer'
   },
@@ -30,7 +30,8 @@ let WebpackConfig = {
         test: /\.js$/,
         exclude: /node_modules/,
         include : APP_DIR,
-        use: ['eslint-loader']
+        use: ['eslint-loader'],
+        enforce: 'pre'
       }
     ]
   }

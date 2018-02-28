@@ -1,6 +1,6 @@
 {
   "name": "reactjspain-drawer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Redefined Drawer for React Apps",
   "main": "dist/main.js",
   "scripts": {

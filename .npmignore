@@ -1,8 +1,7 @@
 # npmignore
-examples
 node_modules
 src
-tests
+public
 webpack.config.js
 .babelrc
 .gitignore

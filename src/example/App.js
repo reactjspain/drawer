@@ -1,35 +1,41 @@
-import React, { Component } from 'react'
+import React, { Component }  from 'react'
 import ReactDOM from 'react-dom'
-import { hot } from 'react-hot-loader'
-import Drawer from '../drawer'
+import Drawer from '../main'
+import { AppContainer } from 'react-hot-loader'
 
-const AppC = () => <div>Hello World!! 10aa</div>
-const HotApp = hot(module)(AppC)
-
-/*class App extends Component {
+class Example extends Component {
   state = {
     open: false
   }
 
-  toggle = () => {
-    this.setState(prevState => ({
-      open: !prevState.open
-    }))
+  open = () => {
+    this.setState({open: true})
   }
 
-  render = () => (
-    <React.Fragment>
-      {'holaaaaaaa'}
-      <button onClick={this.toggle}>
-        Toggle Drawer
-      </button>
-      <Drawer open={this.state.open} />
-    </React.Fragment>
-  )
+  close = () => {
+    this.setState({open: false})
+  }
 
-}*/
+  render = () => {
+    const { open } = this.state
+    const { children } = this.props
 
+    return (
+      <React.Fragment>
+        <button onClick={this.open}>Open Drawer</button>
+        <Drawer open={open} onClose={this.close}>
+          {'hola'}
+          {children}
+        </Drawer>
+      </React.Fragment>
+    )
+  }
 
-ReactDOM.render(<HotApp />, document.getElementById('root'))
+}
 
-export default HotApp
+ReactDOM.render(
+  <AppContainer>
+    <Example />
+  </AppContainer>,
+  document.getElementById('root'),
+)

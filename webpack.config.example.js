@@ -1,63 +1,22 @@
-/*const path = require("path")
-const HtmlWebPackPlugin = require("html-webpack-plugin")
-
-module.exports = {
-  entry: ["./src/drawer.js"],
-  output: {
-    path: path.resolve(__dirname, "public"),
-    filename: "[name].js"
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader"
-          }
-        ]
-      }
-    ]
-  },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html"
-    })
-  ]
-}*/
-
-
-const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
-const env = process.env.NODE_ENV || 'development'
 
-module.exports = {
+let config = {
   entry: [
-    './src/example/App.js',
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server'
+    './src/example/app.js'
   ],
-  output: {filename: 'index.js', path: path.resolve('public')},
+  output: {
+    path: path.resolve('public'),
+    filename: 'bundle.js'
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html"
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"' + env + '"'
-      }
-    }),
-    new webpack.HotModuleReplacementPlugin()
+      hash: true,
+      title: 'RJS-Drawer',
+      template: './src/index.template.html',
+      path: path.resolve('public'),
+      filename: 'index.html'
+    })
   ],
   module: {
     loaders: [
@@ -68,21 +27,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         }
-      },
-      {
-        test: /\.js$/, 
-        loaders: ['react-hot-loader/webpack'],
-        include: [path.resolve('src/example')]
       }
     ]   
-  },
-  stats: { colors: true },
-  devServer: {
-    hot: true,
-    historyApiFallback: true,
-    stats: {
-      chunkModules: false,
-      colors: true
-    }
   }
 }
+
+module.exports = config

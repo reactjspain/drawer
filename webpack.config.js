@@ -6,11 +6,11 @@ const APP_DIR = path.resolve(__dirname, 'src')
 
 let WebpackConfig = {
 
-  entry: APP_DIR + '/drawer.js',
+  entry: APP_DIR + '/main.js',
 
   output: {
     path: BUILD_DIR,
-    filename: 'drawer.min.js',
+    filename: 'main.min.js',
     libraryTarget: 'umd',
     library: 'Drawer'
   },

@@ -1,4 +1,4 @@
-# Redefined Drawer
+# Redefined Drawer for React Apps
 
 This React Component allows you to show a drawer with different sections and operations.
 
@@ -6,35 +6,18 @@ This component makes use of [Material UI Components](https://github.com/mui-org/
 
 ## Installation
 
-To install this Component, run `yarn add @reactjspain/drawer` or `npm install @reactjspain/drawer`.
+To install this Component, run `npm install @reactjspain/drawer`
 
-## Usage
+## Documentation
 
-To use the component, In your react Application just do
+Run web server in `/public/docs` folder
 
-```javascript
-import React from 'react'
-import Drawer from '@reactjspain/drawer'
+## Example
 
-const MyComponent = props => {
+### Web
 
-  return (
-    <Drawer open={open}>
-      {Hello World}
-    </Drawer>
-  )
+Run web server in `/public` folder
 
-}
+### Code
 
-export default MyComponent
-```
-
-You can also provide additional configuration like:
-
-```javascript
-  <Drawer
-    open={open}
-    user={user}
-    sections={[]}
-  />
-```
+Visit `/src/example/app.js`

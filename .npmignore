@@ -3,6 +3,10 @@ node_modules
 src
 public
 webpack.config.js
+webpack.config.example.js
+styleguide.config.js
+.eslintrc
+.env
 .babelrc
 .gitignore
 .npmignore
